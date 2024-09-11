@@ -178,7 +178,7 @@ async def chat_completions(
             data["model"] = data["model"].replace("ollama/", "")
             data.pop("max_tokens")
             data["messages"] = openai_to_ollama(data)
-            ollama_vision_models = ["llava", "moondream"]
+            ollama_vision_models = ["llava", "moondream","minicpm-v"]
             if any([data["model"].startswith(m) for m in ollama_vision_models]):
                 # The Ollama OpenAPI compatibility layer doesn't support images
                 # see: https://github.com/ollama/ollama/issues/3690
